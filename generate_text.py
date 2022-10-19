@@ -17,8 +17,7 @@ def main_function(file,word_first,n_count):
         data = char_check(data)
 
         random_word(data,word_first,n_count)
-        print('\n')
-        f.close()
+    #print(f.closed)
 
 def char_check(input):
     pattern=r'[^a-zA-ZäöåÄÖÅ]'
@@ -59,7 +58,7 @@ def random_word(text,word_first,n_count):
 
 def random_word_from_word_list(text,word):
     global used_words_old
-    if used_words_old.get(word) == None:
+    if used_words_old.get(word) == None:#because next work can be the same word.
         words_observed = observed_words(word,text)
         if len(words_observed) > 0:
             seq_words_observed = []

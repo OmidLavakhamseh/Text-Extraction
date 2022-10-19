@@ -3,11 +3,11 @@ import sys
 from operator import itemgetter
 def main_function(file):
     try:
-        f = open(file,"r")
+        f = open(file,"r",encoding='utf-8')
     except OSError:
         print(f"The file does not exist!")
 
-    with f:
+    with f :
 
         data = f.read()
         data = char_check(data)
@@ -20,7 +20,7 @@ def main_function(file):
 
         most_observed_word(data,5,3)
 
-        f.close()
+    #print(f.closed)
   
 
 def char_check(input):
@@ -71,11 +71,11 @@ def observed_words(word,text):
 
     dic_observed =dict()
 
-    for word in words_observed:
-        if word in dic_observed:
-            dic_observed[word] += 1
+    for item in words_observed:
+        if item in dic_observed:
+            dic_observed[item] += 1
         else:
-            dic_observed[word] = 1
+            dic_observed[item] = 1
     return dic_observed
 
 def most_observed_word(text,num_most_common_used,num_observed_words):
