@@ -24,7 +24,7 @@ def main_function(file):
   
 
 def char_check(input):
-    pattern=r'[^a-zA-ZäöåÄÖÅ]'#caret(^) says to relace those which are not in list
+    pattern=r'[^a-zA-Z]'#caret(^) says to relace those which are not in list
     return(re.sub(pattern, ' ', input.lower()))
 
 

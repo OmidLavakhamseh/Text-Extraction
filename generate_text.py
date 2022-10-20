@@ -20,7 +20,7 @@ def main_function(file,word_first,n_count):
     #print(f.closed)
 
 def char_check(input):
-    pattern=r'[^a-zA-ZäöåÄÖÅ]'
+    pattern=r'[^a-zA-Z]'
     return(re.sub(pattern, ' ', input.lower()))
 
 
